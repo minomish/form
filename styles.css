@@ -1,0 +1,416 @@
+body{
+    background-color: #f3f5ef;
+    font-family: "Literata", serif;
+    font-weight: 200;
+    color: #395865;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+.app{
+    position: relative;
+}
+
+header{
+    position: relative;
+    margin-top: 100px;
+}
+
+h1{
+    font-size: 48px;
+    margin: 0;
+    text-align: center;
+    width: 80%;
+    font-family: Literata, serif;
+    font-weight: 400;
+    color: #395865;
+    letter-spacing: 2px;
+    line-height: 40px
+}
+
+h2 {
+  font-size: 32px;
+  margin: 0;
+  text-align: center;
+  font-family: Literata, serif;
+  font-weight: 400;
+  font-style: italic;
+  color: #395865;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+}
+
+
+.ornament {
+  position: absolute;
+  top: -350px;
+  right: -230px;
+  width: 130%;
+  animation: spin 30s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.player {
+  position: absolute;
+  top: -74px;
+  right: -80px;
+  margin: 0 auto;
+  width: 269px;
+  z-index: 4;
+}
+
+.music {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  animation: spin 30s linear infinite;
+}
+
+.play {
+  position: absolute;
+  width: 95%;
+  top: 7px;
+  left: 7px;
+  z-index: 2;
+}
+
+.img_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img_box-item {
+    width: 120%;
+    margin-top: 8px;
+}
+
+.img_box-item:first-child{
+    margin-top: 30px;
+}
+
+.div_btn {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn_up {
+  background-color: #4e6771;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.btn_up:hover {
+  background-color: #3d535b;
+  transform: scale(1.03);
+}
+
+.btn_up:active {
+  transform: scale(0.98);
+}
+
+.img_up {
+  width: 90px; /* делаем компактнее, можно изменить */
+  animation: floatUpDown 2s ease-in-out infinite;
+}
+
+/* Анимация вверх-вниз */
+@keyframes floatUpDown {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.g_orn{
+    opacity: 0.5;
+    width: 75%;
+}
+
+h3{
+    font-size: 48px;
+    margin: 0;
+    text-align: center;
+    font-family: Literata, serif;
+    font-weight: 400;
+    color: #284450;
+    font-variant: small-caps;
+    letter-spacing: 5px;
+    line-height: 42px;
+}
+
+.p-main{
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "Literata";
+    font-weight: 300;
+    margin: 25px 0;
+    letter-spacing: 3px;
+}
+
+/* Gabriela Literata Lobster Pacifico */
+.main_img_box{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.img_animal{
+    width: 100px;
+    opacity: 0.5;
+}
+
+.ornament2 {
+  width: 130%;
+  animation: spin 30s linear infinite;
+  opacity: 0.5;
+  position: absolute;
+  top: 555px;
+  z-index: 1; 
+}
+
+
+.calendar {
+  margin-top: 85px;
+  position: relative;
+  z-index: 3;
+  background-color: #8199a3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.text{
+    text-align: center;
+    color: #284450;
+    font-size: 20px;
+    line-height: 20px;
+    font-family: "Literata";
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 50px 0 10px 0 ;
+}
+
+.text_data{
+    margin: 0;
+    text-align: center;
+    line-height: 35px;
+    font-size: 25px;
+    font-family: "Literata";
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #284450;
+    text-transform: uppercase;
+}
+
+.calendar_img_wrapper {
+  position: relative;
+  width: 85%;
+  margin-top: 20px;
+  border-radius: 30px;
+  overflow: hidden;
+    background: linear-gradient(to bottom, rgb(252, 253, 241), rgba(255, 255, 255, 0));
+}
+
+.calendar_img_wrapper::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%; 
+  border-radius: 30px;
+  background: linear-gradient(to bottom, rgb(252, 253, 241), rgba(255, 255, 255, 0));
+  z-index: 2;
+  pointer-events: none;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+/* .calendar_img_wrapper::before {
+    content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 24%; 
+  border-radius: 20px;
+  background-color: rgb(252, 253, 241);
+  z-index: 2;
+  pointer-events: none;
+} */
+
+.calendar_img {
+  width: 100%;
+  display: block;
+  background-color: #ffffff;
+  opacity: 0.5;
+  position: relative;
+  z-index: 3;
+  border-radius: 30px;
+}
+
+.heard_img{
+    width: 100%;
+}
+
+.text_1{
+    color: #284450;
+    font-family: "Literata";
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 15px 0;
+    letter-spacing: 4px;
+}
+
+.text_2{
+    color: #284450;
+    font-family: "Literata";
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+
+.oi-img{
+    margin: 40px 0;
+    width: 65%;
+}
+
+.ornament3{
+    width: 130%;
+    animation: spin 30s linear infinite;
+    opacity: 0.5;
+    position: absolute;
+    bottom: -240px;
+    z-index: 1; 
+}
+
+.schedule{
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.vertical-line {
+  width: 1px;
+  height: 60px;
+  background-color: black;
+  
+}
+
+
+.bird{
+    width: 70px;
+    transform: rotate(30deg);
+    opacity: 0.5;
+    position: absolute;
+    bottom: 205px;
+    right: 30px;
+}
+
+.bird2{
+    width: 70px;
+    transform: rotate(-30deg);
+    opacity: 0.5;
+    position: absolute;
+    bottom: -85px;
+    left: -50px;
+}
+
+.form_container{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-text{
+    color: #284450;
+    font-weight: 300;
+}
+
+.form_input{
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.ratioDiv{
+    width: 100%;
+}
+
+.form-radio{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.form-radio input[type="radio"] {
+  accent-color: #284450;
+}
+
+.btn_centered {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+.btn_submit{
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #395865;
+    color: #ffffff;
+    padding: 15px 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
