@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RSVP</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+    #message {
+      margin-top: 20px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <form id="rsvp-form">
+    <p>Аты-жөніңізді жазыңыз:</p>
+    <input type="text" name="entry.834269375" required />
+
+    <p>Tойымызға келесіз бе?</p>
+    <label>
+      <input type="radio" name="entry.204823189" value="Әрине, келемін!" required />
+      Әрине, келемін!
+    </label><br/>
+    <label>
+      <input type="radio" name="entry.204823189" value="Жұбайыммен келемін!" />
+      Жұбайыммен келемін!
+    </label><br/>
+    <label>
+      <input type="radio" name="entry.204823189" value="Өкінішке орай, келе алмаймын" />
+      Өкінішке орай, келе алмаймын
+    </label><br/>
+
+    <button type="submit">Жауапты жіберу</button>
+  </form>
+
+  <!-- Сообщение идёт сразу после формы -->
+  <p id="message" class="hidden">Рақмет! Жауабыңыз қабылданды.</p>
+
+  <script>
+    const form = document.getElementById('rsvp-form');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLScsPLYlZpUTSZrHHsk4WT0g4uU42kpykcyKT0vyM1Sf2ztDxA/formResponse", {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+      }).then(() => {
+        // ❗ Форма остаётся, сообщение появляется СНИЗУ
+        message.classList.remove('hidden');
+        form.reset(); // очищает поля
+      }).catch(() => {
+        alert("Қате пайда болды. Қайтадан көріңіз.");
+      });
+    });
+  </script>
+</body>
+</html>
